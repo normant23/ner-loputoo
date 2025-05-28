@@ -1,6 +1,7 @@
 # Nimeüksuste tuvastamine ajaloolistes Tartu Linnavolikogu protokollides
 
 Autor: Norman Tolmats
+
 Juhendaja: Siim Orasmaa
 
 Antud repositooriumis on toodud käesolevas töös kasutatud koodifailid.

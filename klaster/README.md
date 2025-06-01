@@ -3,6 +3,7 @@
 Arvutusklaster Rocket: https://hpc.ut.ee/services/HPC-services/Rocket
 
 Failis `requirements.txt` on toodud arvutusklastril tööks kasutatud Pyhton virtuaalkeskkonna kõikide teekide versioonid. See sisaldab ka üleliigseid teeke, mis tulid kaasa arvutusklastril virtuaalkeskkonda luues. Pythoni versiooniks oli 3.12.3. Töös kasutatud virtuaalkeskkonna saab luua järgmiste käskudega:
+
 Linux/macOS
 ```
 virtualenv myenv

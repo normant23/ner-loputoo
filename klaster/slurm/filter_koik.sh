@@ -4,4 +4,4 @@
 #SBATCH --mem 32G
 #SBATCH -t 0-2:00:00
 
-venv_thesis/bin/python3.12 python/filter_and_setup_all.py
+venv_thesis/bin/python3.12 python/filter_koik.py

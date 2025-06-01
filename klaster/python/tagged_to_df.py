@@ -30,8 +30,8 @@ def process(limit, input_folder, output_folder, model_name):
                     break
                 if span.nertag in counts:
                     counts[span.nertag] += 1
-            if add_sen_prob and len(sen.text) > 4 and counts['B-LOC'] + counts['B-PER'] + counts['B-ORG'] == 0:
-            #if add_sen_prob and len(sen.text) > 4:
+            #if add_sen_prob and len(sen.text) > 4 and counts['B-LOC'] + counts['B-PER'] + counts['B-ORG'] == 0:
+            if add_sen_prob and len(sen.text) > 4:
             #if add_sen_prob and len(sen.text) > 4 and counts['B-LOC'] + counts['B-PER'] + counts['B-ORG'] != 0:
                 df.loc[len(df)] = (name, sen_nr, last_index, last_index + len(sen.text), counts['B-LOC'], counts['B-PER'], counts['B-ORG'])
             last_index += len(sen.text)
@@ -45,12 +45,12 @@ def process(limit, input_folder, output_folder, model_name):
 
 if __name__ == '__main__':
     model_name = sys.argv[2]
-    input_folder = f'data/first_model_tagged_clean/{model_name}'
-    output_folder = f'data/tagged_sen_csv/{model_name}/clean_O'
+    input_folder = f'data/first_model_tagged/{model_name}'
+    output_folder = f'data/tagged_sen_csv/{model_name}/pre_clean'
     os.makedirs(output_folder, exist_ok=True)
     
-    #prob_limits = [0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
-    prob_limits = [0.8, 0.85, 0.9]
+    prob_limits = [0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    #prob_limits = [0.8, 0.85, 0.9]
     file_args = []
 
     start_time = time.time()

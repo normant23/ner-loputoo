@@ -6,4 +6,4 @@
 #SBATCH --mail-user=norman.tolmats@ut.ee
 #SBATCH --mail-type=BEGIN,END,FAIL
 
-venv_thesis/bin/python3.12 python/final_model_vs_estbertner.py --input "7"
+venv_thesis/bin/python3.12 python/cpu_final_results.py --input "7"

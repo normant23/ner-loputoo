@@ -16,4 +16,5 @@ DIRS=($(ls -1 first_model))
 DIR=${DIRS[$SLURM_ARRAY_TASK_ID-1]}
 DIRNAME=$(basename "$DIR")
 
-venv_thesis/bin/python3.12 python/silver_to_bio_test.py --input "$DIR" "28"
+venv_thesis/bin/python3.12 python/silver_to_bio.py --input "$DIR" "28"
+

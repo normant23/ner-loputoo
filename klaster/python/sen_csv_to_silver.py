@@ -19,11 +19,8 @@ def get_selected(df, target_sum):
             break
     return selected_rows
 
-#def process(csv, input_folder, output_folder):
-def process(csv, input_folder, output_folder, O_input_file):
+def process(csv, input_folder, output_folder):
     sen_df = pd.read_csv(os.path.join(input_folder, csv))
-    sen_df_o = pd.read_csv(O_input_file)
-    sen_df = pd.concat([sen_df, sen_df_o], axis=0)
     sen_df['total_counts'] = sen_df['loc_count'] + sen_df['per_count'] + sen_df['org_count']
     shuffled_df = sen_df.sample(frac=1, random_state=42).reset_index(drop=True)
     total_tags = shuffled_df['total_counts'].sum()
@@ -40,9 +37,8 @@ def process(csv, input_folder, output_folder, O_input_file):
 
 if __name__ == '__main__':
     model_name = sys.argv[2]
-    input_folder = f'data/tagged_sen_csv/{model_name}/clean'
-    O_input_file = f'data/tagged_sen_csv/{model_name}/clean_O/90.csv'
-    output_folder = f'data/silver_csv/{model_name}/clean'
+    input_folder = f'data/tagged_sen_csv/{model_name}/pre_clean'
+    output_folder = f'data/silver_csv/{model_name}/pre_clean'
     os.makedirs(output_folder, exist_ok=True)
     
     file_args = []
@@ -50,8 +46,7 @@ if __name__ == '__main__':
     start_time = time.time()
 
     for csv in os.listdir(input_folder):
-        #file_args.append((csv, input_folder, output_folder))
-        file_args.append((csv, input_folder, output_folder, O_input_file))
+        file_args.append((csv, input_folder, output_folder))
 
     num_cores = int(sys.argv[3])
     print(f"Using {num_cores} CPU cores")

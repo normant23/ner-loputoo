@@ -9,4 +9,4 @@ DIRS=($(ls -1 first_model))
 DIR=${DIRS[$SLURM_ARRAY_TASK_ID-1]}
 DIRNAME=$(basename "$DIR")
 
-venv_thesis/bin/python3.12 python/tagged_to_df.py --input "$DIR" "8"
+venv_thesis/bin/python3.12 python/tagged_to_csv.py --input "$DIR" "8"

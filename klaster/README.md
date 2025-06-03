@@ -25,11 +25,11 @@ Kaustas `slurm` on toodud ressusihaldus programmi Slurm tööskriptid, mida kasu
 
 ### Ettevalmistus
 
-`filter_koik` - valmistab ette kõikidest protokollidest koosneva andmestiku
+`filter_koik` - Valmistab ette kõikidest protokollidest koosneva andmestiku.
 
-`filter_tudeng` - valmistab ette katsemärgendusandmestiku
+`filter_tudeng` - Valmistab ette katsemärgendusandmestiku.
 
-`process_gold` - valmistab ette kuldstandardandmestiku
+`process_gold` - Valmistab ette kuldstandardandmestiku. Lisaks parandatakse mõned andmetes esinevad vead, mis avastati käesoleva töö käigus.
 
 
 ### Andmetöötlus
@@ -40,25 +40,25 @@ Kaustas `slurm` on toodud ressusihaldus programmi Slurm tööskriptid, mida kasu
 
 `silver_to_bio` - `sen_csv_to_silver` tulemusena saadud csv failidest võetakse valitud lausete informatsioon ja need viiakse BIO-kujule, et neid saaks kasutada mudelite loomiseks. BIO-kujul olevad andmed salvestatakse csv-kujule.
 
-`tudeng_to_bio` - teisendab katsemärgendusandmestiku bio-kujule
+`tudeng_to_bio` - Teisendab katsemärgendusandmestiku sobivad laused bio-kujule, et neid andmeid saaks kasutatada katsemärgendusmudeli loomiseks.
 
 
 ### Mudelite loomine 
 
-`teacher_model` - õpetajamudelite loomiseks
+`teacher_model` - Loob ristvalideerimise gruppide põhjal õpetajamudelid.
 
-`single_model` - loob korraga ühe mudeli (seda kasutati nii ühe õppijamdueli jaoks kui ka katsemärgendusmudeli loomiseks)
+`single_model` - Loob korraga ühe mudeli õppijamudeli/katsemärgendusmudeli.
 
-`multiple_models` - loob korraga palju erinevaid õppijamudeleid
+`multiple_models` - Loob korraga palju erinevaid õppijamudeleid.
 
 
 ### Mudeli rakendamine
 
-`apply_teacher_model` - rakendab protokollidele õpetajamudeleid
+`apply_teacher_model` - Rakendab märgendamata protokollidele õpetajamudeleid.
 
 
 ### Tulemused
 
-`cpu_final_results` - mudelite tulemused andmetel (cpu)
+`cpu_final_results` - Mudelite tulemused andmetel (cpu)
 
-`gpu_final_results` - mudelite tulemsued andmetel (gpu),  `gpu_final_results.py` Pythoni fail väljastab tulemused kasutades `print` ja `gpu_final_results_csv.py` salvestab tulemused csv-kujule 
+`gpu_final_results` - Mudelite tulemsued andmetel (gpu),  `gpu_final_results.py` Pythoni fail väljastab tulemused kasutades `print` ja `gpu_final_results_csv.py` salvestab tulemused csv-kujule 
